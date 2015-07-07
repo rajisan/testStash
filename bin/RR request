@@ -1,0 +1,49 @@
+$ curl http://10.76.75.10:8000/api/config/token_types
+{"token_types": {"seachange": "MD5", "ccur": "SHA1"}}
+
+$ curl http://10.76.75.10:8000/api/config/keys_seachange
+{"keys_seachange": {"1": "abd8ef834ba9bc97d97f27815959ac3ccebacebd884b1cac3d6004
+94ad67d7b24d8a3802328df2f61d82a89a3d127170ee28d11cc11e739f5b6d6e0e57cfd41c", "2"
+: "cf88086b394c74319f8e4b6f0f5a204ab0ddc7a63aec65f13fdc20a46c94e812eeed3a76c4573
+819f8b0870e7a5f7f4cd492c1741b762b2e1dadd86823298147", "3": "f883e99eaf951ca1b6a2
+e382b0ddcf12f33d02ea690ac2c844abefbdbd2ac6f176a8b35ec61a0d13e3b388a1b4377d4b34b3
+f29bd97a918240422b45de0e721d", "4": "2e38ad092b96ab385537294046bd63b4d42cc945bb1
+fc8255f560544975ade49f1d8e2a340bf659d72c23f6fa0c23a6cf76aeb6994e8558b4dcae8911f0
+a913b"}}
+
+$ curl http://10.76.75.10:8000/api/config/seachange
+{"seachange": {"internal_signature": "seachange", "expire_date_restrict": false,
+ "ip_restrict": false, "time_to_live": 86400, "internal_auth": false}}
+ 
+$ curl http://10.76.75.10:8000/api/config/streaming_gateway
+{"streaming_gateway": {"settings": [{"redirect_code": 307, "media_ext": "", "med
+ia_path": "/streamingGateway/media/", "signature": "seachange", "key_id": 3, "ur
+l_pattern": "(?i)^/streamingGateway/Content/Duluth/[^/]+$"}, {"redirect_code": 3
+03, "media_ext": "", "media_path": "/streamingGateway/media/", "signature": "sea
+change", "key_id": 1, "url_pattern": "(?i)^/streamingGateway/Content/[^/]+/[^/]+
+$"}]}}
+
+$ curl http://10.76.75.10:8000/api/config/ip
+{"ip": {"restrict": false, "log_prefix": "IP Restricted - ", "redirect_url": ""}
+}
+
+$ curl http://10.76.75.10:8000/api/config/debug
+{"debug": true}
+
+$ curl http://10.76.75.10:8000/api/config/logging
+{"logging": true}
+
+$ curl http://10.76.75.10:8000/api/config/geo
+{"geo": {"restrict": false, "log_prefix": "Geo Restricted - ", "redirect_url": "
+x", "db_path": "GeoLite2-City.mmdb"}}
+
+$ curl http://10.76.75.10:8000/api/config/ip_allow_range
+{"ip_allow_range": ["10.75.0.0/16", "10.76.0.0/16", "129.75.25.0/24"]}
+
+$ curl http://10.76.75.10:8000/api/config/ip_deny_range
+{"ip_deny_range": ["10.75.112.37/32", "10.75.112.1-10.75.112.20", "10.75.112.0/2
+4"]}
+
+
+{"token_auth": {"validate": false, "validate_expressions": ["/media(/[^/]*)*/Manifest$", "/media/([^/]*/)*[^.]+\\.(f4m|m3u8)$"]}}* Connection #0 to host 10.76.7
+5.10 left intact
