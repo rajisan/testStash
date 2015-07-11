@@ -4,6 +4,6 @@ public class StashCommit {
 public static void main(String[] args) {
 	
 	System.out.println("Configuring JIRA to test automatic issue transition from stash");
-	System.out.println("test");
+	
 }
 }
